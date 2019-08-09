@@ -18,6 +18,11 @@ Usage:
 conv-mod [options] <dir>
 ```
 
+## options
+
+- `-f, --filter <filter>`: a query string to filter files
+- `-r, --regular`: regard query string as regular expression to filter files
+
 ## used libraries
 
 - [commander.js](https://github.com/tj/commander.js)

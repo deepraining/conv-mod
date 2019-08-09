@@ -18,6 +18,11 @@ npm install conv-mod -g
 conv-mod [options] <dir>
 ```
 
+## 参数
+
+- `-f, --filter <filter>`: 查询某个字符串，过滤文件
+- `-r, --regular`: 当查询某个字符串，过滤文件时，把查询字符串当作正则匹配
+
 ## 使用的第三方库
 
 - [commander.js](https://github.com/tj/commander.js)

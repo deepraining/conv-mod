@@ -85,6 +85,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
-    "commander": "^2.19.0"
+    "commander": "^2.19.0",
+    "rd": "^2.0.1"
   }
 }
