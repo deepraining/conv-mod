@@ -42,7 +42,7 @@
     "test-watch": "jest --watch --notify",
     "test-cover": "jest --coverage",
     "coverage": "npm run test-cover && opn coverage/lcov-report/index.html",
-    "example": "rm -rf example-run && cp -r example example-run && babel-node src example-run"
+    "example": "rm -rf example-run && cp -r example example-run && babel-node src example-run --amd --cjs"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",

@@ -22,7 +22,17 @@ conv-mod [options] <dir> [extraDirs...]
 
 - `-f, --filter <filter>`: 查询某个字符串，过滤文件
 - `-r, --regular`: 当查询某个字符串，过滤文件时，把查询字符串当作正则匹配
+- `--amd`: 转化 AMD 模块
+- `--cjs`: 转化 CommonJs 模块
 
 ## 使用的第三方库
 
 - [commander.js](https://github.com/tj/commander.js)
+
+## 暂时不支持的转换格式
+
+```
+const a = require('a').default;
+const {a, b} = require('a');
+const a, {b, c} = require('a');
+```

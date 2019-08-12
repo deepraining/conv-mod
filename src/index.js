@@ -46,7 +46,7 @@ function getFiles({ dirPath, filter, regular }) {
   return files;
 }
 
-function handle(file) {
+function handle(file, options) {
   const shortFile = relative(cwd, file);
 
   log(`Start to handle file ${shortFile}`);
@@ -55,14 +55,14 @@ function handle(file) {
   const tree = parse(content);
 
   try {
-    if (checkAmd(tree)) {
+    if (options.amd && checkAmd(tree)) {
       log(`File ${shortFile} is an AMD module`);
       convertAmd({ file, tree });
       success(`Convert file ${shortFile} succeeded \n`);
       return;
     }
 
-    if (checkCjs(tree)) {
+    if (options.cjs && checkCjs(tree)) {
       log(`File ${shortFile} is an CommonJs module`);
       convertCjs({ file, tree });
       success(`Convert file ${shortFile} succeeded \n`);
@@ -94,7 +94,7 @@ function run(dirs, options) {
   });
 
   files.forEach(file => {
-    handle(file);
+    handle(file, options);
   });
 }
 
@@ -107,7 +107,8 @@ commander
     '-r, --regular',
     'regard query string as regular expression to filter files',
   )
-  .option('-i, --ignore', 'ignore files under node_modules')
+  .option('--amd', 'convert AMD modules')
+  .option('--cjs', 'convert CommonJs modules')
   .action((dir, extraDirs, options) => {
     const dirs = [dir, ...extraDirs];
 
