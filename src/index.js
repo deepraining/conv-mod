@@ -18,6 +18,8 @@ const { readFileSync } = fse;
 
 const cwd = process.cwd();
 
+const errors = [];
+
 /**
  * Get files.
  *
@@ -52,9 +54,10 @@ function handle(file, options) {
   log(`Start to handle file ${shortFile}`);
 
   const content = readFileSync(file, 'utf8');
-  const tree = parse(content);
 
   try {
+    const tree = parse(content);
+
     if (options.amd && checkAmd(tree)) {
       log(`File ${shortFile} is an AMD module`);
       convertAmd({ file, tree });
@@ -71,9 +74,10 @@ function handle(file, options) {
 
     info(`No need to convert file ${shortFile} \n`);
   } catch (e) {
-    error(`Can not convert file ${shortFile} \n`);
-    error(e.stack);
-    error('');
+    const msg = `Can not convert file ${shortFile}`;
+
+    error(`${msg} \n`);
+    errors.push(msg);
   }
 }
 
@@ -96,6 +100,14 @@ function run(dirs, options) {
   files.forEach(file => {
     handle(file, options);
   });
+
+  if (errors.length) {
+    error('\n');
+    errors.forEach(e => {
+      error(e);
+    });
+    error('');
+  }
 }
 
 commander
