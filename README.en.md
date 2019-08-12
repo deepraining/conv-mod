@@ -15,7 +15,7 @@ npm install conv-mod -g
 Usage:
 
 ```
-conv-mod [options] <dir>
+conv-mod [options] <dir> [extraDirs...]
 ```
 
 ## options

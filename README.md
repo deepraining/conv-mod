@@ -15,7 +15,7 @@ npm install conv-mod -g
 使用:
 
 ```
-conv-mod [options] <dir>
+conv-mod [options] <dir> [extraDirs...]
 ```
 
 ## 参数

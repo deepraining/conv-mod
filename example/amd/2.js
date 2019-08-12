@@ -1,16 +1,5 @@
-define([
-  'a',
-  'b',
-  // comment 1
-  './c',
-  '../../d/e',
-], function(
-  a,
-  b,
-  // comment 2
-  c,
-) {
+define(function() {
   console.log('hello');
 
-  return {};
+  return 1;
 });

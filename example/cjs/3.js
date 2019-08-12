@@ -12,4 +12,4 @@ console.log('hello');
 exports.c = 'c';
 // comment 4
 
-exports.c = 'c';
+exports.d = 'd';
