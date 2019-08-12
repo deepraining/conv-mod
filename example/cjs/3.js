@@ -1,15 +1,14 @@
-/**
- * comment 1
- */
-
-// comment 2
 const a = require('a');
 import b from 'b';
 
-// comment 3
 console.log('hello');
 
 exports.c = 'c';
-// comment 4
 
 exports.d = 'd';
+
+exports.e = { a: 1, b: 2, c: 3 };
+
+exports.f = function() {
+  return 'f';
+};
