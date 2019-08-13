@@ -6,7 +6,7 @@ Convert JavaScript module from AMD or CommonJs to ES6.
 
 ## quick start
 
-Install conv-mod:
+Install:
 
 ```
 npm install conv-mod -g
@@ -24,10 +24,6 @@ conv-mod [options] <dir> [extraDirs...]
 - `-r, --regular`: regard query string as regular expression to filter files
 - `--amd`: convert AMD modules
 - `--cjs`: convert CommonJs modules
-
-## used libraries
-
-- [commander.js](https://github.com/tj/commander.js)
 
 ## currently can not convert
 

@@ -6,7 +6,7 @@
 
 ## 快速开始
 
-安装 conv-mod:
+安装:
 
 ```
 npm install conv-mod -g
@@ -24,10 +24,6 @@ conv-mod [options] <dir> [extraDirs...]
 - `-r, --regular`: 当查询某个字符串，过滤文件时，把查询字符串当作正则匹配
 - `--amd`: 转化 AMD 模块
 - `--cjs`: 转化 CommonJs 模块
-
-## 使用的第三方库
-
-- [commander.js](https://github.com/tj/commander.js)
 
 ## 暂时不支持的转换格式
 
